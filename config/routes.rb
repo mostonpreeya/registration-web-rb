@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   post 'user', to: 'user#create'
   get "uesr/show" ,to: "user#show"
 
-  root 'user#show'
+  root 'user#new'
 end
