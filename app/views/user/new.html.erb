@@ -1,2 +1,58 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Registration Form</h1>
+        <%= form_with url: '/register', method: 'post', local: true do |f| %>
+
+            <div class="form-group">
+                <%= f.label :firstname, "First Name" %>
+                <%= f.text_field :firstname, placeholder: "First Name" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :lastname, "Last Name" %>
+                <%= f.text_field :lastname, placeholder: "Last Name" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :birthday, "Birthday" %>
+                <%= f.date_field :birthday, required: true %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :gender, "Gender" %>
+                <div class="radio-group">
+                    <%= f.radio_button :gender, 'male', required: true %>
+                    <%= f.label :gender_male, "Male" %>
+                    <%= f.radio_button :gender, 'female', required: true %>
+                    <%= f.label :gender_female, "Female" %>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :email, "Email" %>
+                <%= f.email_field :email, placeholder: "Email" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :phone, "Phone Number" %>
+                <%= f.telephone_field :phone, placeholder: "Phone Number" %>
+            </div>
+
+            <div class="form-group span-2">
+                <%= f.label :subject, "Subject" %>
+                <%= f.select :subject, [['Choose option', ''], ['Mathematics', 'math'], ['Science', 'science'], ['Thai Language', 'history'], ['English Language', 'literature'], ['History', 'art'], ['Geography', 'art'], ['Health Education', 'art'], ['Art', 'art'], ['Physical Education', 'art']] %>
+            </div>
+
+            <button type="submit">Submit</button>
+        <% end %>
+    </div>
+</body>
+</html>
