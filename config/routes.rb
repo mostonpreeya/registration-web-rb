@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   get 'user/new', to: 'user#new'
   post 'user', to: 'user#create'
+  get "show" ,to: "user#show"
 
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  root 'user#new'
+  root 'user#show'
 end
