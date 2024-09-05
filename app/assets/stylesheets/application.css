@@ -1,15 +1,99 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #fff7da, #fedded, #b4d5ff, #b5a4ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    height: 20px;
+    padding: 10px;
+}
+
+select {
+    height: 40px;
+    width: 100%;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-position: 100%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-repeat: no-repeat;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    background-color: #5f72ca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5246c9;
+}
+
+.form-title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5f72ca;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 16px;
+    width: 600px;
+    padding: 70px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: 200;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
