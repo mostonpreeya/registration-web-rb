@@ -6,6 +6,8 @@
 
 <body>
     <div class="form-container">
+     <%= link_to 'Back to lists', '/', class: 'back-btn' %>
+
         <h1 class="form-title">Registration Form</h1>
         <%= form_with(model: @user,url: user_path) do |f| %>
 
@@ -48,8 +50,8 @@
                 <%= f.label :subject, "Subject" %>
                 <%= f.select :subject, [['Choose option', ''], ['Mathematics', 'math'], ['Science', 'science'], ['Thai Language', 'history'], ['English Language', 'literature'], ['History', 'art'], ['Geography', 'art'], ['Health Education', 'art'], ['Art', 'art'], ['Physical Education', 'art']] %>
             </div>
-
-            <button type="submit">Submit</button>
+            <dv></dv>
+            <button class="submit-btn"type="submit">Submit</button>
         <% end %>
     </div>
 </body>

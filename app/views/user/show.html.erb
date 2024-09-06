@@ -6,11 +6,11 @@
 <body>
 
 <div class="container">
-    <%= link_to 'Back', 'user/new', class: 'back-btn' %>
   <div class="headerAdd">
-    <%= button_to 'Add new user','user/new',method: :get, class: 'add-user-btn' %>
+    <h1 class="form-title">User List</h1>
+    <div></div>
+    <%= button_to '+ Add new user','user/new',method: :get, class: 'add-user-btn' %>
   </div>
-
     <table>
         <thead>
             <tr>
