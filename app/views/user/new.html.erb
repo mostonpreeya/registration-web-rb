@@ -57,4 +57,27 @@
 
         <% end %>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const birthdayPicker = document.getElementById('birthday-picker');
+        const currentYearBuddhist = 2567; // ปีพุทธศักราชที่ต้องการ
+        const currentYearGregorian = new Date().getFullYear();
+
+        flatpickr(birthdayPicker, {
+            dateFormat: "d-m-Y",
+            defaultDate: `01-01-2567`,
+            onChange: function (selectedDates, dateStr, instance) {
+                validateAge(dateStr);
+            }
+        });
+
+        function validateAge(dateStr) {
+            const date = new Date(dateStr);
+            const birthYear = date.getFullYear() + 543;
+            const age = currentYearBuddhist - birthYear;
+        }
+    });
+    </script>
 </body>
