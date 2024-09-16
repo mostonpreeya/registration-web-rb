@@ -2,28 +2,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Form</title>
+    <!-- รวม CSS ของ flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
     <div class="form-container">
-     <%= link_to 'Back to lists', '/', class: 'back-btn' %>
+    <%= link_to 'Back to lists', '/', class: 'back-btn' %>
 
         <h1 class="form-title">Registration Form</h1>
-        <%= form_with(model: @user,url: user_path) do |f| %>
+        <%= form_with(model: @user, url: user_path) do |f| %>
 
             <div class="form-group">
                 <%= f.label :firstname, "First Name" %>
-                <%= f.text_field :firstname, placeholder: "First Name" %>
+                <%= f.text_field :firstname, required: true, placeholder: "First Name" %>
             </div>
 
             <div class="form-group">
                 <%= f.label :lastname, "Last Name" %>
-                <%= f.text_field :lastname, placeholder: "Last Name" %>
+                <%= f.text_field :lastname, required: true, placeholder: "Last Name" %>
             </div>
 
             <div class="form-group">
                 <%= f.label :birthday, "Birthday" %>
-                <%= f.date_field :birthday, required: true %>
+                <%= f.text_field :birthday, id: 'birthday-picker', required: true, placeholder: "Select Date" %>
             </div>
 
             <div class="form-group">
@@ -38,20 +40,21 @@
 
             <div class="form-group">
                 <%= f.label :email, "Email" %>
-                <%= f.email_field :email, placeholder: "Email" %>
+                <%= f.email_field :email, required: true, placeholder: "Email" %>
             </div>
 
             <div class="form-group">
                 <%= f.label :phone, "Phone Number" %>
-                <%= f.telephone_field :phone, placeholder: "Phone Number" %>
+                <%= f.telephone_field :phone, required: true, placeholder: "Phone Number" %>
             </div>
 
             <div class="form-group span-2">
                 <%= f.label :subject, "Subject" %>
                 <%= f.select :subject, [['Choose option', ''], ['Mathematics', 'math'], ['Science', 'science'], ['Thai Language', 'history'], ['English Language', 'literature'], ['History', 'art'], ['Geography', 'art'], ['Health Education', 'art'], ['Art', 'art'], ['Physical Education', 'art']] %>
             </div>
-            <dv></dv>
-            <button class="submit-btn"type="submit">Submit</button>
+
+            <button class="submit-btn" type="submit">Submit</button>
+
         <% end %>
     </div>
 </body>
